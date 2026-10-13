@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Flash",
+      "type": "process",
+      "command": "${env:LOCALAPPDATA}/stm32cube/bundles/programmer/2.23.0/bin/STM32_Programmer_CLI.exe",
+      "args": [
+        "-c", "port=SWD",
+        "-w", "${workspaceFolder}/build/Debug/_1-1_Debug_LED_Blink.elf",
+        "-v",
+        "-rst"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}
