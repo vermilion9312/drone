@@ -8,13 +8,13 @@
 #include "app.h"
 #include <main.h>
 
-void App_Init(void)
+void App_Init(App* this)
 {
-    // Initialize application
+    Output_Init(&this->led, LED_1_GPIO_Port, LED_1_Pin|LED_2_Pin|LED_3_Pin, OUTPUT_ACTIVE_HIGH);
 }
 
-void App_Update(void)
+void App_Update(App* this)
 {
-    HAL_GPIO_TogglePin(LED_1_GPIO_Port, LED_1_Pin);
-    HAL_Delay(500);
+    Output_Toggle(&this->led);
+    HAL_Delay(100);
 }

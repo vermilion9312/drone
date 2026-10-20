@@ -8,7 +8,13 @@
 #ifndef APP_H_
 #define APP_H_
 
-void App_Init(void);
-void App_Update(void);
+#include <output.h>
+
+typedef struct {
+    Output led;
+} App;
+
+void App_Init(App*);
+void App_Update(App*);
 
 #endif /* APP_H_ */
